@@ -1,22 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+/** @jsxImportSource theme-ui */
+
+import { useColorMode } from "theme-ui";
+
+import "./App.css";
 
 function App() {
+  const [colorMode, SetColorMode] = useColorMode();
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <p sx={{ color: "primary" }}>Dark mode theme ui practice</p>
+
+        <button
+          onClick={() => SetColorMode(colorMode === "light" ? "dark" : "light")}
+          sx={{ backgroundColor: "primary", color: "inverseText" }}
         >
-          Learn React
-        </a>
+          Click for {colorMode === "light" ? "Dark 🌙" : "Light ☀️"} Theme
+        </button>
       </header>
     </div>
   );
