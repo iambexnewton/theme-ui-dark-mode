@@ -1,4 +1,7 @@
 const theme = {
+  config: {
+    useLocalStorage: false,
+  },
   initialColorModeName: "light",
   colors: {
     text: "black",
